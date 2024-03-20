@@ -18,16 +18,12 @@ int main()
     if(num1>num2){
         printf("O numero %d é maior que %d", num1, num2);
     }
+    else if(num2>num1){
+        printf("O numero %d é maior que %d", num2, num1);
+        }
     else{
-        if(num2>num1){
-            printf("O numero %d é maior que %d", num2, num1);
-            }
-        else{
-            printf("Os numeros são iguais.");
-            }
-    }
-    
-    
+        printf("Os numeros são iguais.");
+        }
     return 0;
     
 }
