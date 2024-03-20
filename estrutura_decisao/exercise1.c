@@ -18,7 +18,7 @@ int main()
     if(num1>num2){
         printf("O numero %d é maior que %d", num1, num2);
     }
-    if(num2>num1){
+    else if(num2>num1){
         printf("O numero %d é maior que %d", num2, num1);
     }
     else{
