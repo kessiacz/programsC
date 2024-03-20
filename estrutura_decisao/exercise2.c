@@ -18,8 +18,8 @@ int main()
     else if(num1<0){
         printf("O numero %d é menor que 0.", num1);
         }
-        else{
-            printf("Os numeros são iguais.");
+    else{
+        printf("Os numeros são iguais.");
         }
     
     return 0;
