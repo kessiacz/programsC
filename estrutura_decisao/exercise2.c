@@ -15,15 +15,12 @@ int main()
     if(num1>0){
         printf("O numero %d é maior que 0.", num1);
     }
-    else{
-        if(num1<0){
+    else if(num1<0){
         printf("O numero %d é menor que 0.", num1);
         }
         else{
             printf("Os numeros são iguais.");
         }
-    
-    }
     
     return 0;
     
