@@ -24,6 +24,6 @@ int main()
     else{
         printf("Os numeros são iguais.");
         }
-return 0;
+    return 0;
     
 }
