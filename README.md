@@ -24,3 +24,14 @@
 [ARRAY UNIDIMENSIONAL(VETOR).pdf](https://github.com/user-attachments/files/17653043/ARRAY.UNIDIMENSIONAL.VETOR.pdf)
 
 [ARRAY BIDIMENSIONAL (MATRIZ).pdf](https://github.com/user-attachments/files/17653050/ARRAY.BIDIMENSIONAL.MATRIZ.pdf)
+
+
+**AVALIACOES DE ALGORITMOS E LOGICA DE PROGRAMACAO**
+
+[PROVA_1_OPERADORES - CONTROLE DE FLUXO E ESCOLHA.pdf](https://github.com/user-attachments/files/17653693/PROVA_1_OPERADORES.-.CONTROLE.DE.FLUXO.E.ESCOLHA.pdf)
+
+[PROVA_2_ESTRUTURA_REPETICAO.pdf](https://github.com/user-attachments/files/17653695/PROVA_2_ESTRUTURA_REPETICAO.pdf)
+
+[PROVA_3_VETORES_MATRIZES.pdf](https://github.com/user-attachments/files/17653699/PROVA_3_VETORES_MATRIZES.pdf)
+
+[PROVA_4_STRINGS.pdf](https://github.com/user-attachments/files/17653701/PROVA_4_STRINGS.pdf)
