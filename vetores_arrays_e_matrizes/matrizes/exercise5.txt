@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+#define MAX 10 // Definindo um tamanho máximo para a matriz
+
+// Função para verificar se a matriz é uma matriz de permutação
+int ehMatrizPermutacao(int matriz[MAX][MAX], int n) {
+    int i, j;
+
+    // Verificar cada linha
+    for (i = 0; i < n; i++) {
+        int cont = 0;
+        for (j = 0; j < n; j++) {
+            if (matriz[i][j] == 1) {
+                cont++;
+            } else if (matriz[i][j] != 0) {
+                return 0; // Se encontrar um valor diferente de 0 ou 1
+            }
+        }
+        if (cont != 1) {
+            return 0; // Se a linha não contiver exatamente um `1`
+        }
+    }
+
+    // Verificar cada coluna
+    for (j = 0; j < n; j++) {
+        int cont = 0;
+        for (i = 0; i < n; i++) {
+            if (matriz[i][j] == 1) {
+                cont++;
+            }
+        }
+        if (cont != 1) {
+            return 0; // Se a coluna não contiver exatamente um `1`
+        }
+    }
+
+    return 1; // A matriz é uma matriz de permutação
+}
+
+int main() {
+    int matriz[MAX][MAX];
+    int n, i, j;
+
+    // Leitura da dimensão da matriz
+    printf("Digite a dimensão da matriz quadrada (n x n): ");
+    scanf("%d", &n);
+
+    // Leitura dos elementos da matriz
+    printf("Digite os elementos da matriz (0 ou 1):\n");
+    for (i = 0; i < n; i++) {
+        for (j = 0; j < n; j++) {
+            printf("Elemento [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Verificar se a matriz é uma matriz de permutação
+    if (ehMatrizPermutacao(matriz, n)) {
+        printf("A matriz é uma matriz de permutação.\n");
+    } else {
+        printf("A matriz não é uma matriz de permutação.\n");
+    }
+
+    return 0;
+}

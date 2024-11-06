@@ -1,0 +1,65 @@
+#include <stdio.h>
+
+#define ANOS 6
+#define FABRICANTES 4
+
+int main() {
+    int vendas[FABRICANTES][ANOS];
+    int i, j;
+    int fabricanteMaisVendas;
+    int anoMaisVendas;
+    float somaVendas, mediaVendas[FABRICANTES];
+    int totalVendas[ANOS] = {0};
+    int maxVendasAno[ANOS] = {0};
+    int anoComMaisVendas = 0;
+    int maxVendas = 0;
+
+    // Leitura dos dados da tabela
+    printf("Digite os dados das vendas (em milhares de unidades):\n");
+    for (i = 0; i < FABRICANTES; i++) {
+        printf("Fabricante %d:\n", i + 1);
+        for (j = 0; j < ANOS; j++) {
+            printf("Ano %d: ", 2011 + j);
+            scanf("%d", &vendas[i][j]);
+        }
+    }
+
+    // Determinar e mostrar o fabricante com maiores vendas em cada ano
+    printf("\nFabricante com maiores vendas em cada ano:\n");
+    for (j = 0; j < ANOS; j++) {
+        fabricanteMaisVendas = 0;
+        for (i = 1; i < FABRICANTES; i++) {
+            if (vendas[i][j] > vendas[fabricanteMaisVendas][j]) {
+                fabricanteMaisVendas = i;
+            }
+        }
+        printf("Ano %d: Fabricante %d com %d mil unidades\n", 2011 + j, fabricanteMaisVendas + 1, vendas[fabricanteMaisVendas][j]);
+    }
+
+    // Determinar e mostrar o ano onde houve o maior volume de vendas
+    for (j = 0; j < ANOS; j++) {
+        int totalAno = 0;
+        for (i = 0; i < FABRICANTES; i++) {
+            totalAno += vendas[i][j];
+        }
+        totalVendas[j] = totalAno;
+        if (totalAno > maxVendas) {
+            maxVendas = totalAno;
+            anoComMaisVendas = j;
+        }
+    }
+    printf("\nAno com o maior volume de vendas: Ano %d com %d mil unidades\n", 2011 + anoComMaisVendas, maxVendas);
+
+    // Determinar e mostrar a média de vendas de cada fabricante no período
+    printf("\nMédia de vendas de cada fabricante:\n");
+    for (i = 0; i < FABRICANTES; i++) {
+        somaVendas = 0;
+        for (j = 0; j < ANOS; j++) {
+            somaVendas += vendas[i][j];
+        }
+        mediaVendas[i] = somaVendas / ANOS;
+        printf("Fabricante %d: Média de %.2f mil unidades\n", i + 1, mediaVendas[i]);
+    }
+
+    return 0;
+}

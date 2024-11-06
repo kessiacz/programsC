@@ -1,0 +1,38 @@
+#include <stdio.h>
+
+int main() {
+    int i, j;
+    float matriz[3][3];
+    float somaLinha1 = 0, somaColuna3 = 0, somaDiagonalPrincipal = 0;
+
+    // Leitura dos elementos da matriz
+    printf("Digite os elementos da matriz 3x3:\n");
+    for (i = 0; i < 3; i++) {
+        for (j = 0; j < 3; j++) {
+            printf("Elemento [%d][%d]: ", i + 1, j + 1);
+            scanf("%f", &matriz[i][j]);
+        }
+    }
+
+    // Cálculo da soma dos elementos da primeira linha
+    for (j = 0; j < 3; j++) {
+        somaLinha1 += matriz[0][j];
+    }
+
+    // Cálculo da soma dos elementos da terceira coluna
+    for (i = 0; i < 3; i++) {
+        somaColuna3 += matriz[i][2];
+    }
+
+    // Cálculo da soma dos elementos da diagonal principal
+    for (i = 0; i < 3; i++) {
+        somaDiagonalPrincipal += matriz[i][i];
+    }
+
+    // Exibição dos resultados
+    printf("\nSoma dos elementos da primeira linha: %.2f\n", somaLinha1);
+    printf("Soma dos elementos da terceira coluna: %.2f\n", somaColuna3);
+    printf("Soma dos elementos da diagonal principal: %.2f\n", somaDiagonalPrincipal);
+
+    return 0;
+}

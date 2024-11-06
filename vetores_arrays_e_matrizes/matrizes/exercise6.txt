@@ -1,0 +1,103 @@
+#include <stdio.h>
+
+#define MAX 10 // Definindo um tamanho máximo para a matriz
+
+// Função para calcular a soma de uma linha
+int somaLinha(int matriz[MAX][MAX], int n, int linha) {
+    int soma = 0;
+    for (int j = 0; j < n; j++) {
+        soma += matriz[linha][j];
+    }
+    return soma;
+}
+
+// Função para calcular a soma de uma coluna
+int somaColuna(int matriz[MAX][MAX], int n, int coluna) {
+    int soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += matriz[i][coluna];
+    }
+    return soma;
+}
+
+// Função para calcular a soma da diagonal principal
+int somaDiagonalPrincipal(int matriz[MAX][MAX], int n) {
+    int soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += matriz[i][i];
+    }
+    return soma;
+}
+
+// Função para calcular a soma da diagonal secundária
+int somaDiagonalSecundaria(int matriz[MAX][MAX], int n) {
+    int soma = 0;
+    for (int i = 0; i < n; i++) {
+        soma += matriz[i][n - 1 - i];
+    }
+    return soma;
+}
+
+// Função para verificar se a matriz é um quadrado mágico
+int ehQuadradoMagico(int matriz[MAX][MAX], int n) {
+    int somaReferencia = somaLinha(matriz, n, 0); // Soma da primeira linha como referência
+
+    // Verificar somas das linhas
+    for (int i = 1; i < n; i++) {
+        if (somaLinha(matriz, n, i) != somaReferencia) {
+            return 0; // Não é um quadrado mágico
+        }
+    }
+
+    // Verificar somas das colunas
+    for (int j = 0; j < n; j++) {
+        if (somaColuna(matriz, n, j) != somaReferencia) {
+            return 0; // Não é um quadrado mágico
+        }
+    }
+
+    // Verificar soma da diagonal principal
+    if (somaDiagonalPrincipal(matriz, n) != somaReferencia) {
+        return 0; // Não é um quadrado mágico
+    }
+
+    // Verificar soma da diagonal secundária
+    if (somaDiagonalSecundaria(matriz, n) != somaReferencia) {
+        return 0; // Não é um quadrado mágico
+    }
+
+    return 1; // É um quadrado mágico
+}
+
+int main() {
+    int matriz[MAX][MAX];
+    int n;
+
+    // Leitura da dimensão da matriz
+    printf("Digite a dimensão da matriz quadrada (n x n): ");
+    scanf("%d", &n);
+
+    // Verificar se a dimensão é válida
+    if (n <= 0 || n > MAX) {
+        printf("Dimensão inválida.\n");
+        return 1;
+    }
+
+    // Leitura dos elementos da matriz
+    printf("Digite os elementos da matriz:\n");
+    for (int i = 0; i < n; i++) {
+        for (int j = 0; j < n; j++) {
+            printf("Elemento [%d][%d]: ", i + 1, j + 1);
+            scanf("%d", &matriz[i][j]);
+        }
+    }
+
+    // Verificar se a matriz é um quadrado mágico
+    if (ehQuadradoMagico(matriz, n)) {
+        printf("A matriz é um quadrado mágico.\n");
+    } else {
+        printf("A matriz não é um quadrado mágico.\n");
+    }
+
+    return 0;
+}
